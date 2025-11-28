@@ -56,7 +56,7 @@ end
 local function downloadFile(path, func)
 		if not isfile(path) then
 				local suc, res = pcall(function()
-						return game:HttpGet('https://raw.githubusercontent.com/0xEIite/rust/'..readfile('rust/profiles/commit.txt')..'/'..select(1, path:gsub('rust/', '')), true)
+						return game:HttpGet('https://raw.githubusercontent.com/Subbico/rust/'..readfile('rust/profiles/commit.txt')..'/'..select(1, path:gsub('rust/', '')), true)
 				end)
 				if not suc or res == '404: Not Found' then
 						error(res)
@@ -96,7 +96,7 @@ local function finishLoading()
 								if shared.RustDeveloper then
 										loadstring(readfile('rust/loader.lua'), 'loader')()
 								else
-										loadstring(game:HttpGet('https://raw.githubusercontent.com/0xEIite/rust/'..readfile('rust/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+										loadstring(game:HttpGet('https://raw.githubusercontent.com/Subbico/rust/'..readfile('rust/profiles/commit.txt')..'/loader.lua', true), 'loader')()
 								end
 						]]
 						if shared.RustDeveloper then
@@ -136,7 +136,7 @@ if not shared.RustIndependent then
 		else
 				if not shared.RustDeveloper then
 						local suc, res = pcall(function()
-								return game:HttpGet('https://raw.githubusercontent.com/0xEIite/rust/'..readfile('rust/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true)
+								return game:HttpGet('https://raw.githubusercontent.com/Subbico/rust/'..readfile('rust/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true)
 						end)
 						if suc and res ~= '404: Not Found' then
 								loadstring(downloadFile('rust/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...)
